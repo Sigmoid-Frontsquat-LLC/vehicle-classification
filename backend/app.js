@@ -12,8 +12,16 @@ const sqlite3 = require('sqlite3').verbose();
 
 // get 
 app.get('/', (req,res) => {
-    res.send('austin...');
-})
+    res.setHeader("content-type","application/json");
+    res.setHeader("server", os.hostname());
+
+    const response = {
+        message: "Hell wrld!",
+        code: 200
+    };
+
+    res.status(response.code).send(JSON.stringify(response));
+});
 
 
 
