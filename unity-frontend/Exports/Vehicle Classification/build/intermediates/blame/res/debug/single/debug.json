@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/src/main/res/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/build/intermediates/res/merged/debug/mipmap-mdpi_app_icon.png.flat",
+        "source": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/src/main/res/mipmap-mdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/build/intermediates/res/merged/debug/drawable-xhdpi_app_banner.png.flat",
+        "source": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/src/main/res/drawable-xhdpi/app_banner.png"
+    },
+    {
+        "merged": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/build/intermediates/res/merged/debug/mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/src/main/res/mipmap-anydpi-v26/app_icon_round.xml"
+    },
+    {
+        "merged": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/build/intermediates/res/merged/debug/mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "/Users/noir/Documents/Sacramento State/Spring 2020/180 CSC/unity-vehicle-classification/Exports/Vehicle Classification/src/main/res/mipmap-anydpi-v26/app_icon.xml"
+    }
+]

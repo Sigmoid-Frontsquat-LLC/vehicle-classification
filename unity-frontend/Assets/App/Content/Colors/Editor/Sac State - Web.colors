@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12323, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Sac State - Web
+  m_EditorClassIdentifier: 
+  m_Presets:
+  - m_Name: Redwood Grove Green
+    m_Color: {r: 0.007843138, g: 0.11764706, b: 0.078431375, a: 1}
+  - m_Name: Sac State Green
+    m_Color: {r: 0.015686275, g: 0.22352941, b: 0.15294118, a: 1}
+  - m_Name: Stinger Green
+    m_Color: {r: 0, g: 0.34117648, b: 0.23921569, a: 1}
+  - m_Name: Evergreen Ash
+    m_Color: {r: 0.05882353, g: 0.6313726, b: 0.3254902, a: 1}
+  - m_Name: Spruce Green
+    m_Color: {r: 0.34509805, g: 0.7254902, b: 0.2784314, a: 1}
+  - m_Name: White Birch
+    m_Color: {r: 0.85490197, g: 0.83137256, b: 0.5647059, a: 1}
+  - m_Name: Sac State Gold
+    m_Color: {r: 0.76862746, g: 0.70980394, b: 0.5058824, a: 1}
+  - m_Name: Hornet Yellow
+    m_Color: {r: 0.9019608, g: 0.7176471, b: 0.06666667, a: 1}
+  - m_Name: Web-Only 5
+    m_Color: {r: 0.6666667, g: 0.59607846, b: 0.36862746, a: 1}
+  - m_Name: Web-Only 4
+    m_Color: {r: 0.79607844, g: 0.7176471, b: 0.47058824, a: 1}
+  - m_Name: Web-Only 3
+    m_Color: {r: 0.8117647, g: 0.7137255, b: 0.40784314, a: 1}
+  - m_Name: Web-Only 2
+    m_Color: {r: 0.88235295, g: 0.77254903, b: 0.47843137, a: 1}
+  - m_Name: Web-Only 1
+    m_Color: {r: 0.9411765, g: 0.88235295, b: 0.6901961, a: 1}
