@@ -168,10 +168,10 @@ RectTransform:
   m_Father: {fileID: 2933300964338432232}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 307.2, y: -65}
+  m_SizeDelta: {x: 614.4, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7108556386532927672
 CanvasRenderer:
@@ -335,11 +335,11 @@ RectTransform:
   m_Father: {fileID: 2933300965443561614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.1, y: 0}
+  m_AnchorMax: {x: 0.9, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 0, y: -25}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2933300964262391336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -1407.0837}
+  m_SizeDelta: {x: 0, y: -1709.9797}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &5607647413595905584
 MonoBehaviour:
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 1
-  m_Spacing: 50
+  m_Spacing: 25
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -654,7 +654,7 @@ RectTransform:
   m_Father: {fileID: 3175191326287509701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: -0.05187192}
   m_AnchorMax: {x: 1, y: 0.925}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -1011,8 +1011,8 @@ RectTransform:
   m_Father: {fileID: 3175191326287509701}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: -0.05187192}
+  m_AnchorMax: {x: 1, y: 1.0641872}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1037,9 +1037,38 @@ MonoBehaviour:
   - text: Camera
     menuId: Camera
     icon: {fileID: 21300000, guid: 678865575d714418391c4dca332fd204, type: 3}
+    useOnClickEvent: 0
+    hideAfterClick: 1
+    onClick:
+      m_PersistentCalls:
+        m_Calls: []
   - text: Who We Are
     menuId: About
     icon: {fileID: 21300000, guid: a406b49b7beac45458c90e2cc49a958b, type: 3}
+    useOnClickEvent: 0
+    hideAfterClick: 1
+    onClick:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Github Project
+    menuId: 
+    icon: {fileID: 21300000, guid: 1dae0ebe5b9854453911f4f960d40b44, type: 3}
+    useOnClickEvent: 1
+    hideAfterClick: 0
+    onClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3815078721689480319}
+          m_MethodName: Open
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: https://github.com/Sigmoid-Frontsquat-LLC/vehicle-classification
+            m_BoolArgument: 0
+          m_CallState: 2
   flyoutItemTemplate: {fileID: 3683171393115604873}
 --- !u!1 &2933300965657386283
 GameObject:
@@ -1621,6 +1650,7 @@ GameObject:
   - component: {fileID: 2933300966234514811}
   - component: {fileID: 2933300966234514810}
   - component: {fileID: 2933300966234514791}
+  - component: {fileID: 3815078721689480319}
   m_Layer: 5
   m_Name: ShellApp
   m_TagString: Untagged
@@ -1729,6 +1759,19 @@ MonoBehaviour:
   flyout: {fileID: 2933300965625400616}
   navigation: {fileID: 2933300965657386280}
   menuTitle: {fileID: 2933300964713324225}
+--- !u!114 &3815078721689480319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933300966234514790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39eda9687a948480e8682b9f987175de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: 
 --- !u!1 &5625422223680111025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +2028,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.95328945}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2006,7 +2049,18 @@ MonoBehaviour:
   Logging: 0
   onRefresh:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2933300966234514791}
+        m_MethodName: OnSafeAreaChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7838135110981972270
 GameObject:
   m_ObjectHideFlags: 0

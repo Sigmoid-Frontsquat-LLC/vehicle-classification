@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class Flyout : MonoBehaviour {
 	[SerializeField]
@@ -72,6 +73,7 @@ public class Flyout : MonoBehaviour {
 
 	private void Start() {
 		for(int i = 0; i < this.items.Length; ++i) {
+			var data = this.items[i];
 			var flyoutItem = Object.Instantiate(this.flyoutItemTemplate.gameObject).GetComponent<FlyoutItem>();
 			flyoutItem.name = "[Button] " + this.items[i].menuId;
 
@@ -82,64 +84,74 @@ public class Flyout : MonoBehaviour {
 				flyoutItem.Icon.gameObject.SetActive(false);
 			}
 
-			var id = this.items[i].menuId;
+			if(this.items[i].useOnClickEvent) {
+				flyoutItem.Button.onClick.AddListener(
+					() => {
+						data.onClick.Invoke();
 
-			flyoutItem.Button.onClick.AddListener(() => {
-				var shell = this.GetComponentInParent<FlyoutShell>();
+						if(data.hideAfterClick) this.Close();
 
-				shell.Open(id);
+				});
+			} else {
+				flyoutItem.Button.onClick.AddListener(() => {
+					var shell = this.GetComponentInParent<FlyoutShell>();
 
-				var graphic = flyoutItem.Button.targetGraphic;
+					shell.Open(data.menuId);
 
-				var color = graphic.color * flyoutItem.Button.colors.pressedColor;
+					if(data.hideAfterClick) this.Close();
 
-				this.Highlight.transform.SetParent(flyoutItem.Button.transform);
-				this.Highlight.transform.SetAsFirstSibling();
+					var graphic = flyoutItem.Button.targetGraphic;
 
-				color.a = 0.5F;
+					var color = graphic.color * flyoutItem.Button.colors.pressedColor;
 
-				if(this.text) {
-					this.text.color = this.textColor;
-				}
+					this.Highlight.transform.SetParent(flyoutItem.Button.transform);
+					this.Highlight.transform.SetAsFirstSibling();
 
-				this.Highlight.color = color;
+					color.a = 0.5F;
 
-				var rect = this.Highlight.rectTransform;
-
-				rect.anchorMin = Vector2.zero;
-				rect.anchorMax = Vector2.one;
-				rect.sizeDelta = Vector2.zero;
-				rect.anchoredPosition = Vector2.zero;
-				rect.localScale = Vector3.one;
-
-				this.Highlight.gameObject.SetActive(true);
-
-				float h, s, v;
-				Color.RGBToHSV(color, out h, out s, out v);
-
-				if(v <= 50.0F) {
-					s = 0.0F;
-					v = 100.0F;
-
-					var contrast = Color.HSVToRGB(h, s, v);
-
-					var text = flyoutItem.Button.GetComponentInChildren<Text>();
-
-					if(text) {
-						this.textColor = text.color;
-						text.color = contrast;
+					if(this.text) {
+						this.text.color = this.textColor;
 					}
-				} else {
-					s = 0.0F;
-					v = 0.0F;
 
-					var contract = Color.HSVToRGB(h, s, v);
+					this.Highlight.color = color;
 
-					var text = flyoutItem.Button.GetComponentInChildren<Text>();
-				}
+					var rect = this.Highlight.rectTransform;
 
-				this.text = flyoutItem.Button.GetComponentInChildren<Text>();
-			});
+					rect.anchorMin = Vector2.zero;
+					rect.anchorMax = Vector2.one;
+					rect.sizeDelta = Vector2.zero;
+					rect.anchoredPosition = Vector2.zero;
+					rect.localScale = Vector3.one;
+
+					this.Highlight.gameObject.SetActive(true);
+
+					float h, s, v;
+					Color.RGBToHSV(color, out h, out s, out v);
+
+					if(v <= 50.0F) {
+						s = 0.0F;
+						v = 100.0F;
+
+						var contrast = Color.HSVToRGB(h, s, v);
+
+						var text = flyoutItem.Button.GetComponentInChildren<Text>();
+
+						if(text) {
+							this.textColor = text.color;
+							text.color = contrast;
+						}
+					} else {
+						s = 0.0F;
+						v = 0.0F;
+
+						var contract = Color.HSVToRGB(h, s, v);
+
+						var text = flyoutItem.Button.GetComponentInChildren<Text>();
+					}
+
+					this.text = flyoutItem.Button.GetComponentInChildren<Text>();
+				});
+			}
 
 			flyoutItem.transform.SetParent(this.body);
 
@@ -255,5 +267,8 @@ public class Flyout : MonoBehaviour {
 		public string text;
 		public string menuId;
 		public Sprite icon;
+		public bool useOnClickEvent = false;
+		public bool hideAfterClick = false;
+		public UnityEvent onClick = new UnityEvent();
 	}
 }

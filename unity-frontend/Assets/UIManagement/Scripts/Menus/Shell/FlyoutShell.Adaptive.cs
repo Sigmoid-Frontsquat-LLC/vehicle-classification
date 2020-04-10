@@ -8,10 +8,7 @@ public partial class FlyoutShell {
 
 	private Image notchArea;
 
-	protected virtual void OnRefresh(Vector2 min, Vector2 max) {
-		Debug.Log("Min: " + min.y);
-		Debug.Log("Max: " + max.y);
-
+	public virtual void OnSafeAreaChanged(Vector2 min, Vector2 max) {
 		var flyout = this.flyout.GetComponent<RectTransform>();
 
 		var minAnchor = flyout.anchorMin;

@@ -20,19 +20,15 @@ public partial class FlyoutShell : UIMenu {
 		base.Start();
 
 		this.flyout.gameObject.SetActive(true);
-
-		Debug.Log(Screen.safeArea.size);
-		Debug.Log(Screen.safeArea.position);
-		Debug.Log("W: " + Screen.width + " H: " + Screen.height);
 	}
 
-	protected virtual void OnEnable() {
-		this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.AddListener(this.OnRefresh);
-	}
+	//protected virtual void OnEnable() {
+	//	this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.AddListener(this.OnRefresh);
+	//}
 
-	protected virtual void OnDisable() {
-		this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.RemoveListener(this.OnRefresh);
-	}
+	//protected virtual void OnDisable() {
+	//	this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.RemoveListener(this.OnRefresh);
+	//}
 
 	public override bool OnBack() {
 		if(this.flyout.gameObject.activeSelf) {
@@ -79,8 +75,6 @@ public partial class FlyoutShell : UIMenu {
 		rectTransform.anchoredPosition = Vector2.zero;
 
 		menu.Open();
-
-		this.flyout.Close();
 
 		this.menuTitle.text = menu.Title;
 
