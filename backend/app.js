@@ -10,6 +10,12 @@ const sqlite3 = require('sqlite3').verbose();
 
 
 
+
+
+
+
+
+
 // get 
 app.get('/', (req,res) => {
     res.setHeader("content-type","application/json");
@@ -22,6 +28,39 @@ app.get('/', (req,res) => {
 
     res.status(response.code).send(JSON.stringify(response));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * database stuff
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
 
 
 
