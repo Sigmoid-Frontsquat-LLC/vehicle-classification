@@ -54,17 +54,19 @@ const save_url_contents = function (url, path) {
             res.pipe(file);
 
             res.on("end", () => {
-                file.close();
+                try {
+                    file.close();
 
-                const stats = fs.statSync(path);
+                    const stats = fs.statSync(path);
 
-                const kb = Math.round(stats.size / 1024);
-                const mb = Math.round(kb / 1024);
+                    const kb = Math.round(stats.size / 1024);
+                    const mb = Math.round(kb / 1024);
 
-                if (kb === 0) {
-                    console.log(`Removing ${path}`);
-                    fs.unlinkSync(path);
-                }
+                    if (kb === 0) {
+                        console.log(`Removing ${path}`);
+                        fs.unlinkSync(path);
+                    }
+                } catch {}
             });
         });
 
@@ -83,17 +85,19 @@ const save_url_contents = function (url, path) {
             res.pipe(file);
 
             res.on("end", () => {
-                file.close();
+                try {
+                    file.close();
 
-                const stats = fs.statSync(path);
+                    const stats = fs.statSync(path);
 
-                const kb = Math.round(stats.size / 1024);
-                const mb = Math.round(kb / 1024);
+                    const kb = Math.round(stats.size / 1024);
+                    const mb = Math.round(kb / 1024);
 
-                if (kb === 0) {
-                    console.log(`Removing ${path}`);
-                    fs.unlinkSync(path);
-                }
+                    if (kb === 0) {
+                        console.log(`Removing ${path}`);
+                        fs.unlinkSync(path);
+                    }
+                } catch {}
             });
         });
 
