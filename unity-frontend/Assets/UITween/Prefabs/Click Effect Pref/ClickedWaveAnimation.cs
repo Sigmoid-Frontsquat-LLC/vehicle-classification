@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class ClickedWaveAnimation : MonoBehaviour {
-
 	public GameObject WaveObject;
 	public GameObject CanvasMain;
 	public Vector2 defaultSize = new Vector2(256, 256);

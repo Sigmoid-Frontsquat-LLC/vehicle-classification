@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 11400002}
   - component: {fileID: 11400000}
   - component: {fileID: 11454456}
-  - component: {fileID: -4378005524525114624}
   m_Layer: 5
   m_Name: ClickedRound
   m_TagString: Untagged
@@ -61,8 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -158,7 +157,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      StartScale: {x: 2.7, y: 2.7, z: 2.7}
+      StartScale: {x: 1, y: 1, z: 1}
       EndScale: {x: 0, y: 0, z: 0}
     RotationPropetiesAnim:
       rotationEnabled: 0
@@ -181,7 +180,7 @@ MonoBehaviour:
       fadeOverride: 0
       startFade: 0
       endFade: 1
-    UnscaledTimeAnimation: 0
+    UnscaledTimeAnimation: 1
     SaveState: 1
     AtomicAnimation: 0
     ObjectState: 0
@@ -206,21 +205,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb35234601da8f4b9670f9ea18ae5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4378005524525114624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd9c9615b8574e5ea52c210a7f16c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onEnable:
-    m_PersistentCalls:
-      m_Calls: []
-  onDisable:
-    m_PersistentCalls:
-      m_Calls: []

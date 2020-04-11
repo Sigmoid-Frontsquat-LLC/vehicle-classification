@@ -39,16 +39,6 @@ public partial class FlyoutShell : UIMenu {
 	}
 
 	public virtual void Open(string name) {
-		if(this.current != null) {
-			if(this.current != this.menus[0]) {
-				this.menus.Remove(this.current);
-				Destroy(this.current.gameObject);
-			} else {
-				this.current.gameObject.SetActive(false);
-				this.current.transform.SetParent(this.transform);
-			}
-		}
-
 		var index = this.menus.FindIndex(i => string.Compare(i.name, name) == 0);
 
 		UIMenu menu = null;
@@ -61,6 +51,18 @@ public partial class FlyoutShell : UIMenu {
 		} else {
 			menu = UIManager.Create<UIMenu>(name);
 			this.menus.Add(menu);
+		}
+
+		if(this.current == menu) return;
+
+		if(this.current) {
+			if(this.current == this.menus[0]) {
+				this.current.gameObject.SetActive(false);
+				this.current.transform.SetParent(this.transform);
+			} else {
+				this.menus.Remove(this.current);
+				Destroy(this.current.gameObject);
+			}
 		}
 
 		var rectTransform = menu.GetComponent<RectTransform>();

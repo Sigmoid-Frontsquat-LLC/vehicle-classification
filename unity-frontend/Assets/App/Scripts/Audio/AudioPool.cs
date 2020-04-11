@@ -10,7 +10,13 @@ public sealed class AudioPool : Singleton<AudioPool> {
 		if(Instance.pools.ContainsKey(owner) == false) {
 			var pool = new ObjectPool<AudioSource>.Builder()
 				.Create(() => {
-					return new GameObject("Source").AddComponent<AudioSource>();
+					var source = new GameObject("Source").AddComponent<AudioSource>();
+
+					source.transform.SetParent(Instance.transform);
+
+					source.gameObject.hideFlags = HideFlags.HideInHierarchy;
+
+					return source;
 				}).IsAvailable((source) => {
 					return source.isPlaying == false || source.gameObject.activeSelf == false;
 				}).Destroy((source) => {
@@ -36,6 +42,10 @@ public sealed class AudioPool : Singleton<AudioPool> {
 	}
 
 	public static void Play(object owner, AudioClip clip) {
+		AudioPool.Play(owner, clip, 1.0F);
+	}
+
+	public static void Play(object owner, AudioClip clip, float volume) {
 		if(Instance == null) return;
 
 		if(Instance.pools.ContainsKey(owner) == false) return;
@@ -46,6 +56,7 @@ public sealed class AudioPool : Singleton<AudioPool> {
 
 		if(pool.GetAvailable(out source)) {
 			source.clip = clip;
+			source.volume = volume;
 			source.Play();
 		}
 	}
