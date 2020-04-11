@@ -14,6 +14,36 @@ const host = "api.cognitive.microsoft.com";
 const path = "/bing/v7.0/images/search";
 const terms = ["truck", "sedan", "coupe", "suv", "motorcycle"];
 
+// This will server as the basis for
+// searching the bing API.
+const classifications = [
+    {
+        label: "truck",
+        search_term: ["truck", "ford f-150", "GMC Sierra", "Toyota Tacoma"],
+    },
+    {
+        label: "sedan",
+        search_term: ["sedan", "Honda Accord", "2020 Honda Accord"],
+    },
+    {
+        label: "coupe",
+        search_term: ["coupe", "Zonda", "Honda s2000"],
+    },
+    {
+        label: "suv",
+        search_term: ["suv", "GMC Yukan", "Ford Explorer"],
+    },
+    {
+        label: "motorcycle",
+        search_term: [
+            "motorcycle",
+            "dugatti",
+            "harley davidson",
+            "yamaha motorcycle",
+        ],
+    },
+];
+
 const encode_query = (query) => {
     const keys = Object.keys(query);
 
