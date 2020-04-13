@@ -1058,7 +1058,15 @@ MonoBehaviour:
         m_Calls: []
   - text: Who We Are
     menuId: About
-    icon: {fileID: 21300000, guid: a406b49b7beac45458c90e2cc49a958b, type: 3}
+    icon: {fileID: 21300000, guid: dc435fd32b54c48099aa800a21f202fb, type: 3}
+    useOnClickEvent: 0
+    hideAfterClick: 1
+    onClick:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Presentation
+    menuId: Presentation
+    icon: {fileID: 21300000, guid: 2daaab6786ddf49f79dcd78bc6f05f68, type: 3}
     useOnClickEvent: 0
     hideAfterClick: 1
     onClick:
@@ -1724,6 +1732,7 @@ MonoBehaviour:
   autoAttach: 1
   title: Main
   adaptive: {fileID: 3175191326287509701}
+  navigatorTint: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 1}
   content: {fileID: 2933300964808853678}
   flyout: {fileID: 2933300965625400616}
   navigation: {fileID: 2933300965657386280}

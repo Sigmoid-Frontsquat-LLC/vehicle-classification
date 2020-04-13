@@ -84,4 +84,8 @@ public partial class FlyoutShell : UIMenu {
 
 		this.current.transform.localScale = Vector3.one;
 	}
+
+	protected virtual void OnValidate() {
+		this.OnAdaptiveValidation();
+	}
 }
