@@ -14,7 +14,7 @@ public sealed class AudioPool : Singleton<AudioPool> {
 
 					source.transform.SetParent(Instance.transform);
 
-					source.gameObject.hideFlags = HideFlags.HideInHierarchy;
+					//source.gameObject.hideFlags = HideFlags.HideInHierarchy;
 
 					return source;
 				}).IsAvailable((source) => {
@@ -46,6 +46,10 @@ public sealed class AudioPool : Singleton<AudioPool> {
 	}
 
 	public static void Play(object owner, AudioClip clip, float volume) {
+		AudioPool.Play(owner, clip, volume, 1.0F);
+	}
+
+	public static void Play(object owner, AudioClip clip, float volume, float pitch) {
 		if(Instance == null) return;
 
 		if(Instance.pools.ContainsKey(owner) == false) return;
@@ -57,6 +61,7 @@ public sealed class AudioPool : Singleton<AudioPool> {
 		if(pool.GetAvailable(out source)) {
 			source.clip = clip;
 			source.volume = volume;
+			source.pitch = pitch;
 			source.Play();
 		}
 	}

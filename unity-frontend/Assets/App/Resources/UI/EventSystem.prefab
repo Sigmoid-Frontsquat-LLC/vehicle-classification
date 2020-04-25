@@ -70,7 +70,8 @@ MonoBehaviour:
   onClickSound: {fileID: 8300000, guid: 153bc82e46aab4fb5badd08d46a55373, type: 3}
   ripple: {fileID: 100000, guid: 9b803f85cde2c1c4db04360f0106130a, type: 3}
   maxRipples: 5
-  volume: 0.2
+  volume: 0.01
+  pitch: 0.5
 --- !u!114 &599282279279613207
 MonoBehaviour:
   m_ObjectHideFlags: 0

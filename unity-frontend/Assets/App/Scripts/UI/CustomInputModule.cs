@@ -8,6 +8,8 @@ public class CustomInputModule : StandaloneInputModule {
 	public int maxRipples = 5;
 	[Range(0.0F, 1.0F)]
 	public float volume = 1.0F;
+	[Range(-3.0F, 3.0F)]
+	public float pitch = 1.0F;
 
 	private ObjectPool<GameObject> ripples = null;
 
@@ -79,7 +81,7 @@ public class CustomInputModule : StandaloneInputModule {
 				if(selectable == null) selectable = pointerUpHandler.GetComponentInParent<Selectable>();
 
 				if(selectable) {
-					AudioPool.Play(this, this.onClickSound, this.volume);
+					AudioPool.Play(this, this.onClickSound, this.volume, this.pitch);
 				}
 			}
 		}
