@@ -91,6 +91,8 @@ public class CameraView : UIMenu {
 			this.target,
 			Camera.main,
 			(texture) => {
+				TextureScale.Bilinear(texture, 128, 128);
+
 				this.output.texture = texture;
 			});
 	}
