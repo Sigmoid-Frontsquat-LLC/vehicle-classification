@@ -20,19 +20,15 @@ public partial class FlyoutShell : UIMenu {
 		base.Start();
 
 		this.flyout.gameObject.SetActive(true);
-
-		Debug.Log(Screen.safeArea.size);
-		Debug.Log(Screen.safeArea.position);
-		Debug.Log("W: " + Screen.width + " H: " + Screen.height);
 	}
 
-	protected virtual void OnEnable() {
-		this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.AddListener(this.OnRefresh);
-	}
+	//protected virtual void OnEnable() {
+	//	this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.AddListener(this.OnRefresh);
+	//}
 
-	protected virtual void OnDisable() {
-		this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.RemoveListener(this.OnRefresh);
-	}
+	//protected virtual void OnDisable() {
+	//	this.adaptive.GetComponent<Crystal.SafeArea>().onRefresh.RemoveListener(this.OnRefresh);
+	//}
 
 	public override bool OnBack() {
 		if(this.flyout.gameObject.activeSelf) {
@@ -43,16 +39,6 @@ public partial class FlyoutShell : UIMenu {
 	}
 
 	public virtual void Open(string name) {
-		if(this.current != null) {
-			if(this.current != this.menus[0]) {
-				this.menus.Remove(this.current);
-				Destroy(this.current.gameObject);
-			} else {
-				this.current.gameObject.SetActive(false);
-				this.current.transform.SetParent(this.transform);
-			}
-		}
-
 		var index = this.menus.FindIndex(i => string.Compare(i.name, name) == 0);
 
 		UIMenu menu = null;
@@ -65,6 +51,18 @@ public partial class FlyoutShell : UIMenu {
 		} else {
 			menu = UIManager.Create<UIMenu>(name);
 			this.menus.Add(menu);
+		}
+
+		if(this.current == menu) return;
+
+		if(this.current) {
+			if(this.current == this.menus[0]) {
+				this.current.gameObject.SetActive(false);
+				this.current.transform.SetParent(this.transform);
+			} else {
+				this.menus.Remove(this.current);
+				Destroy(this.current.gameObject);
+			}
 		}
 
 		var rectTransform = menu.GetComponent<RectTransform>();
@@ -80,12 +78,14 @@ public partial class FlyoutShell : UIMenu {
 
 		menu.Open();
 
-		this.flyout.Close();
-
 		this.menuTitle.text = menu.Title;
 
 		this.current = menu;
 
 		this.current.transform.localScale = Vector3.one;
+	}
+
+	protected virtual void OnValidate() {
+		this.OnAdaptiveValidation();
 	}
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5648808431956647635}
   - component: {fileID: 655914383650522223}
-  - component: {fileID: 5389558647143868356}
+  - component: {fileID: 8542083120116771694}
   - component: {fileID: 599282279279613207}
   m_Layer: 0
   m_Name: EventSystem
@@ -42,13 +42,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6303138992476927883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &5389558647143868356
+--- !u!114 &8542083120116771694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6303138992476927883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: ce99e45fb7e9d4b318c9c73e15828652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -67,6 +67,10 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+  onClickSound: {fileID: 8300000, guid: 153bc82e46aab4fb5badd08d46a55373, type: 3}
+  ripple: {fileID: 100000, guid: 9b803f85cde2c1c4db04360f0106130a, type: 3}
+  maxRipples: 5
+  volume: 0.2
 --- !u!114 &599282279279613207
 MonoBehaviour:
   m_ObjectHideFlags: 0

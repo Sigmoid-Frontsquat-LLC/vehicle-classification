@@ -5,13 +5,12 @@ public partial class FlyoutShell {
 	[Header("Adaptive")]
 	[SerializeField]
 	private RectTransform adaptive;
+	[SerializeField]
+	private Color navigatorTint = Color.white;
 
 	private Image notchArea;
 
-	protected virtual void OnRefresh(Vector2 min, Vector2 max) {
-		Debug.Log("Min: " + min.y);
-		Debug.Log("Max: " + max.y);
-
+	public virtual void OnSafeAreaChanged(Vector2 min, Vector2 max) {
 		var flyout = this.flyout.GetComponent<RectTransform>();
 
 		var minAnchor = flyout.anchorMin;
@@ -41,7 +40,7 @@ public partial class FlyoutShell {
 			this.notchArea.transform.SetParent(this.transform);
 			this.notchArea.transform.SetAsFirstSibling();
 
-			this.notchArea.color = this.navigation.GetComponent<Image>().color;
+			this.notchArea.color = this.navigation.GetComponent<Image>().color * this.navigatorTint;
 
 			this.notchArea.rectTransform.anchorMin = new Vector2(0.0F, max.y);
 			//this.notchArea.rectTransform.anchorMax = new Vector2(1.0F, 1.01F);
@@ -55,6 +54,13 @@ public partial class FlyoutShell {
 			if(this.notchArea) {
 				Destroy(this.notchArea.gameObject);
 			}
+		}
+	}
+
+	protected virtual void OnAdaptiveValidation() {
+		Graphic graphic;
+		if(this.notchArea && this.navigation && (graphic = this.navigation.GetComponent<Graphic>())) {
+			this.notchArea.color = graphic.color * this.navigatorTint;
 		}
 	}
 }
