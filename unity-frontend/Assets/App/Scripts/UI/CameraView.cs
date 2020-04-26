@@ -6,8 +6,8 @@ public class CameraView : UIMenu {
 	public CameraPreview cameraPreview;
 	public RawImage output;
 	public RectTransform target;
-	public float fragment = 0.0F;
-	public float[] samples = new float[5];
+	private float fragment = 0.0F;
+	private float[] samples = new float[5];
 
 	protected virtual void OnEnable() {
 		this.cameraPreview.Play();
