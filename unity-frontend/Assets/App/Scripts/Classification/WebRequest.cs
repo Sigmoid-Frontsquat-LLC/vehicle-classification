@@ -24,6 +24,7 @@ public static class WebRequest : System.Object {
 
     static UnityWebRequest CreateApiRequest(string url, string method, object body) {
         string bodyString = null;
+
         if(body is string) {
             bodyString = (string)body;
         } else if(body != null) {
@@ -36,8 +37,8 @@ public static class WebRequest : System.Object {
         request.method = method;
         request.downloadHandler = new DownloadHandlerBuffer();
         request.uploadHandler = new UploadHandlerRaw(string.IsNullOrEmpty(bodyString) ? null : System.Text.Encoding.UTF8.GetBytes(bodyString));
-        request.SetRequestHeader("Accept", "application/json");
-        request.SetRequestHeader("Content-Type", "application/json");
+        //request.SetRequestHeader("Accept", "application/json");
+        //request.SetRequestHeader("Content-Type", "application/json");
         request.timeout = 60;
 
         return request;
