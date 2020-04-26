@@ -24,7 +24,7 @@ def parse_source(flag,value):
         return (False,None)
 
 
-if len(sys.argv == 1) or (len(sys.argv) - 1) % 2:
+if len(sys.argv) == 1 or (len(sys.argv) - 1) % 2:
     raise ValueError("Usage: [-s image]")
 else:
     flag = sys.argv[1]
@@ -45,7 +45,7 @@ enhanced_img = enhancer.enhance(10.0)
 enhanced_img.save('enhanced_resized.jpg')
 img_array = np.asarray(img)
 img_array = img_array / 255
-img_array = img_array.reshape((1,256,256,3))
+img_array = img_array.reshape((1,width,height,3))
 
 
 ############## LOADING THE MODEL ##################
@@ -55,7 +55,7 @@ img_array = img_array.reshape((1,256,256,3))
 # weights_256_path = '/dnn/weights_model256.hdf5'
 
 model_path = '/dnn/model{}_final.hdf5'.format(width)
-weight_path = '/dnn/weights_model{}.hdf5'.format(width)
+weights_path = '/dnn/weights_model{}_final.hdf5'.format(width)
 
 # 
 model = tf.keras.models.load_model(model_path)
