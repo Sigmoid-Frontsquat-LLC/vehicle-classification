@@ -172,7 +172,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: 0, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7108556386532927672
 CanvasRenderer:
@@ -426,7 +426,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -1778.5511}
+  m_SizeDelta: {x: 0, y: -1575.3788}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &5607647413595905584
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 52
+    m_MaxSize: 38
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -951,10 +951,10 @@ RectTransform:
   m_Father: {fileID: 2933300966144755995}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -40, y: -40}
+  m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2933300965623246014
 CanvasRenderer:
@@ -1077,6 +1077,25 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 1dae0ebe5b9854453911f4f960d40b44, type: 3}
     useOnClickEvent: 1
     hideAfterClick: 0
+    onClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3815078721689480319}
+          m_MethodName: Open
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: https://github.com/Sigmoid-Frontsquat-LLC/vehicle-classification
+            m_BoolArgument: 0
+          m_CallState: 2
+  - text: Settings
+    menuId: Settings
+    icon: {fileID: 21300000, guid: c2212b0828c154056aa0b33022cc53b6, type: 3}
+    useOnClickEvent: 0
+    hideAfterClick: 1
     onClick:
       m_PersistentCalls:
         m_Calls:
